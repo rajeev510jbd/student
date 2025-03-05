@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studies Recommendation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+<div class="mynav shadow-sm" style="background:black; color:white;  padding:10px;width:100%;">
+        <h1 class="text-center">Education Recommendation System</h1>
+    </div>
+<div class="container">
+    <h2 class="text-center">Fill in the details to get recommendations</h2>
+    <form method="post" action="/pred">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Drawing">Drawing:</label>
+                    <select class="form-control" id="Drawing" name="Drawing">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Dancing">Dancing:</label>
+                    <select class="form-control" id="Dancing" name="Dancing">
+                        <option value="1">yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Singing">Singing:</label>
+                    <select class="form-control" id="Singing" name="Singing">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Sports">Sports:</label>
+                    <select class="form-control" id="Sports" name="Sports">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Video_Game">Video Game:</label>
+                    <select class="form-control" id="Video_Game" name="Video_Game">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Repeat for remaining hobbies -->
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Acting">Acting:</label>
+                    <select class="form-control" id="Acting" name="Acting">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Travelling">Travelling:</label>
+                    <select class="form-control" id="Travelling" name="Travelling">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Gardening">Gardening:</label>
+                    <select class="form-control" id="Gardening" name="Gardening">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Animals">Animals:</label>
+                    <select class="form-control" id="Animals" name="Animals">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Photography">Photography:</label>
+                    <select class="form-control" id="Photography" name="Photography">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Teaching">Teaching:</label>
+                    <select class="form-control" id="Teaching" name="Teaching">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Exercise">Exercise:</label>
+                    <select class="form-control" id="Exercise" name="Exercise">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Coding">Coding:</label>
+                    <select class="form-control" id="Coding" name="Coding">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Electricity_Components">Electricity Components:</label>
+                    <select class="form-control" id="Electricity_Components" name="Electricity_Components">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Mechanic_Parts">Mechanic Parts:</label>
+                    <select class="form-control" id="Mechanic_Parts" name="Mechanic_Parts">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Computer_Parts">Computer Parts:</label>
+                    <select class="form-control" id="Computer_Parts" name="Computer_Parts">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Researching">Researching:</label>
+                    <select class="form-control" id="Researching" name="Researching">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Architecture">Architecture:</label>
+                    <select class="form-control" id="Architecture" name="Architecture">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Historic_Collection">Historic Collection:</label>
+                    <select class="form-control" id="Historic_Collection" name="Historic_Collection">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Botany">Botany:</label>
+                    <select class="form-control" id="Botany" name="Botany">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Zoology">Zoology:</label>
+                    <select class="form-control" id="Zoology" name="Zoology">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Physics">Physics:</label>
+                    <select class="form-control" id="Physics" name="Physics">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Accounting">Accounting:</label>
+                    <select class="form-control" id="Accounting" name="Accounting">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Economics">Economics:</label>
+                    <select class="form-control" id="Economics" name="Economics">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Sociology">Sociology:</label>
+                    <select class="form-control" id="Sociology" name="Sociology">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Geography">Geography:</label>
+                    <select class="form-control" id="Geography" name="Geography">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Psychology">Psychology:</label>
+                    <select class="form-control" id="Psychology" name="Psychology">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="History">History:</label>
+                    <select class="form-control" id="History" name="History">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Science">Science:</label>
+                    <select class="form-control" id="Science" name="Science">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Business_Education">Business Education:</label>
+                    <select class="form-control" id="Business_Education" name="Business_Education">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Chemistry">Chemistry:</label>
+                    <select class="form-control" id="Chemistry" name="Chemistry">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Mathematics">Mathematics:</label>
+                    <select class="form-control" id="Mathematics" name="Mathematics">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Biology">Biology:</label>
+                    <select class="form-control" id="Biology" name="Biology">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+           
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Designing">Designing:</label>
+                    <select class="form-control" id="Designing" name="Designing">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Content_Writing">Content Writing:</label>
+                    <select class="form-control" id="Content_Writing" name="Content_Writing">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Crafting">Crafting:</label>
+                    <select class="form-control" id="Crafting" name="Crafting">
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                </div>
+            </div>
+                                                
+            
+      <div class="col-md-6">
+    <div class="form-group">
+        <label for="Literature">Literature:</label>
+        <select class="form-control" id="Literature" name="Literature">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Reading">Reading:</label>
+        <select class="form-control" id="Reading" name="Reading">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Cartooning">Cartooning:</label>
+        <select class="form-control" id="Cartooning" name="Cartooning">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Debating">Debating:</label>
+        <select class="form-control" id="Debating" name="Debating">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Astrology">Astrology:</label>
+        <select class="form-control" id="Astrology" name="Astrology">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Hindi">Hindi:</label>
+        <select class="form-control" id="Hindi" name="Hindi">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="French">French:</label>
+        <select class="form-control" id="French" name="French">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="English">English:</label>
+        <select class="form-control" id="English" name="English">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Solving_Puzzles">Solving Puzzles:</label>
+        <select class="form-control" id="Solving_Puzzles" name="Solving_Puzzles">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Gymnastics">Gymnastics:</label>
+        <select class="form-control" id="Gymnastics" name="Gymnastics">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Yoga">Yoga:</label>
+        <select class="form-control" id="Yoga" name="Yoga">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Engineering">Engineering:</label>
+        <select class="form-control" id="Engineering" name="Engineering">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Doctor">Doctor:</label>
+        <select class="form-control" id="Doctor" name="Doctor">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Pharmacist">Pharmacist:</label>
+        <select class="form-control" id="Pharmacist" name="Pharmacist">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Cycling">Cycling:</label>
+        <select class="form-control" id="Cycling" name="Cycling">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Knitting">Knitting:</label>
+        <select class="form-control" id="Knitting" name="Knitting">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Director">Director:</label>
+        <select class="form-control" id="Director" name="Director">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Journalism">Journalism:</label>
+        <select class="form-control" id="Journalism" name="Journalism">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Business">Business:</label>
+        <select class="form-control" id="Business" name="Business">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="Listening_to_Music">Listening_to_Music:</label>
+        <select class="form-control" id="Listening_to_Music" name="Listening_to_Music">
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      
+        <!-- Add more form fields here as needed -->
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
