@@ -8,9 +8,8 @@ fastapi
 uvicorn
 joblib
 nltk
-tensorflow
-torch
-transformers
+
+
 requests
 matplotlib
 seaborn
